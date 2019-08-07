@@ -1,0 +1,28 @@
+<div class="topnav">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Coffee Shop</a>
+    </div>
+    
+  
+  <div class="search-container">
+      <form action="/action_page.php">
+        <!-- <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button> -->
+        <!-- <a href="#"><span class="icon"><i class="fa fa-bell"></i></span> </a> -->
+        <a href="#" (click)="onLogoutClick()"><span class="icon"><i class="fa fa-power-off"></i></span></a>    
+      </form>
+  </div>
+ 
+</div>
+<div class="sidebar">
+  <a class="active" [routerLink]="['/admin']">Home</a>
+  <a [routerLink]="['/menu_admin']">Menu</a>
+  <a [routerLink]="['/order_admin']">Order</a>
+  <a [routerLink]="['/reserve_admin']">Reserve</a>
+  <a [routerLink]="['/product_admin']">Products</a>
+  <a [routerLink]="['/message_admin']">Messages</a>
+  <a [routerLink]="['/event_admin']">Events</a>
+  <a [routerLink]="['/conce_admin']">Consessions</a>
+</div>
+
+

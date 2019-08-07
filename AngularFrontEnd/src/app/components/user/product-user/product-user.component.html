@@ -1,0 +1,188 @@
+<app-nav-user></app-nav-user>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+  <div class="inventory-body" >
+    <div class="container">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Our Products</h1>
+          <br><br>
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="/assets/darkRoast.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="name">Dark Roast</h4>
+                    <p class="card-text">We have Dark Roast coffee beans at very affordable price.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <!--<div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            
+                      </div>-->
+                      <small class="price">Rs. 410</small>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/highRoast.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="name">High Roast</h4>
+                      <p class="card-text">We have High Roast coffee beans at very affordable price.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        
+                        <small class="price">Rs. 410</small>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/mediumRoast.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="name">Meadium Roast</h4>
+                      <p class="card-text">We have Medium Roast coffee beans at very affordable price.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        
+                        <small class="price">Rs. 410</small>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/lightRoast.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="name">Light Roast</h4>
+                      <p class="card-text">We have Light Roast coffee beans at very affordable price.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+
+                        
+                        <small class="price">Rs. 410</small>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="order" >
+          <div class="container">
+               <div class="row">
+                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                       <div class="container1 col-lg-8 col-md-8 col-sm-8 col-xs-8 jumbotron second">
+                          <h2 class="heading">Now delivering freashly coffee beans direct to your door!</h2>
+                          <br><br>
+                           <form [formGroup]="productForm" (ngSubmit)="prosubmit()">
+      
+                               <div class="formdetail">
+                                  <div class="row rowalign">
+                                      <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                                          <label for="cof" class="lbl">Coffee Beans Products</label>
+                                         
+                                      </div>
+                                      <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                          <label for="quan" class="lbl"> Quantity (kg)</label>
+                                          
+                                      </div>
+                                  </div>
+
+                                  <div formArrayName="coffeeProducts">
+                                      <div *ngFor="let productItem of productForms.controls; let i=index" >
+                                          <div [formGroupName]="i"class="row rowalign">
+                                              <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                                                  <select class="form-control"  id="cof" formControlName="cof" name="cof" >
+                                                      <option>Dark Roast</option>
+                                                      <option>High Roast</option>
+                                                      <option>Medium Roast</option>
+                                                      <option>Light Roast</option>
+                                                  </select>
+                                                  <span class="text-danger" *ngIf="getproductForms(i).controls['cof'].touched && getproductForms(i).controls['cof'].hasError('required') && submitted">
+                                                      Bean type is required! </span>                           
+                                              </div>
+                                  
+                                              <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                                  <input type="text" class="form-control" id="pquantity" placeholder="Quantity" formControlName="pquantity" name="pquantity" >
+                                                  <span class="text-danger" *ngIf="getproductForms(i).controls['pquantity'].touched && getproductForms(i).controls['pquantity'].hasError('required')  && submitted">
+                                                      Quantity is required! </span> 
+                                              </div>
+          
+                                              <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                                  <button type="button" (click)="deleteproduct(i)" class="btn btn-default ">Delete </button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+          
+                                      <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <button type="button" (click)="addPro()" class="btn btn-default "> Select More Coffee Beans</button>
+                                      </div> 
+
+                                   <!-- <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="coffee" class="lbl">Coffee Beans Products</label> 
+                                           <select class="form-control" id="coffee">
+                                           <option>Dark Roast</option>
+                                           <option>High Roast</option>
+                                           <option>Medium Roast</option>
+                                           <option>Light Roast</option>
+                                           </select>
+                                   </div>
+                                   <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                       <label for="quan" class="lbl"> Quantity</label>
+                                       <input type="text" class="form-control" id="quan" placeholder="Quantity">
+                                   </div>                                                            -->
+                                   
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <label for="name" class="lbl"> Name</label>
+                                      <input type="text" class="form-control" id="name"  formControlName="name"  name="name" placeholder="Full Name" [(ngModel)]="name">
+                                      <span class="text-danger" *ngIf="productForm.controls['name'].touched && productForm.controls['name'].hasError('required')  && submitted">
+                                         Name is required! </span>
+                                  </div>
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                       <label for="email" class="lbl">Email</label>
+                                       <input type="email" class="form-control" id="email" formControlName="email" name="email" placeholder="Email" [(ngModel)]="email">
+                                     <span class="text-danger" *ngIf="productForm.controls['email'].touched && productForm.controls['email'].hasError('required')  && submitted">
+                                        Email is required! </span>
+                                  </div>
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                       <label for="tp" class="lbl">Phone Number</label>
+                                       <input type="tel" class="form-control" id="tp" formControlName="phone" name="phone" placeholder="012 3456789" [(ngModel)]="phone">
+                                     <span class="text-danger" *ngIf="productForm.controls['phone'].touched && productForm.controls['phone'].hasError('required')  && submitted">
+                                        phone is required! </span>
+                                   </div>
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">                                     
+                                       <label for="date" class="lbl">Delivery Date</label>
+                                       <input type="date" name="date" value="" class="form-control" formControlName="date" [(ngModel)]="date">
+                                     <span class="text-danger" *ngIf="productForm.controls['date'].touched && productForm.controls['date'].hasError('required')  && submitted">
+                                        date is required! </span>
+                                   </div>
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                       <label for="address" class="lbl">Delivery Address</label>
+                                       <textarea class="form-control" rows="6" id="address" formControlName="address" name="address" placeholder="Address" [(ngModel)]="address"></textarea>
+                                     <span class="text-danger" *ngIf="productForm.controls['address'].touched && productForm.controls['address'].hasError('required')  && submitted">
+                                        address is required! </span>
+                                   </div>
+                                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <button type="submit" [disabled]="!productForm.valid && loading" class="form-control btn btn-default " id="order-submit" name="submit"> Order</button>
+                                   </div>
+                               </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2 col-sm-2"></div>  
+               </div>
+          </div>   
+      </section>
+      <hr class="hr">
+
+      <footer class="foo">
+        <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+        <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+      </footer>
+    </div>
+  </div>
+</div>

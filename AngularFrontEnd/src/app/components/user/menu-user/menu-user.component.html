@@ -1,0 +1,78 @@
+<app-nav-user></app-nav-user>
+<div class="container-fluid back">
+<div class="inventory-body" >
+<div class="container">
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Coffee Menu</h1>
+          <p class="lead">We have the best selection of lattes, flat whites and filter blends of global elite brands for you to try.Join with us to discover your rich, bold flavors.</p>
+        </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+          <div class="col-md-3" *ngFor="let drink of drinks">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="http://localhost:8000/{{drink.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h4>{{ drink.dname }}</h4>
+                  <p class="card-text">{{ drink.ddescript }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                      
+                    </div>
+                    <small class="price">Rs. {{ drink.dprice }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      
+    </div>
+</div>
+<br>
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Food Menu</h1>
+      <p class="lead text-muted">We have the best selection of baked goods and tasty coffee snacks on display for you to choose from.Join with us to discover the world of coffee and arouse your sweet memories.</p>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-4" *ngFor="let snack of snacks">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="http://localhost:8000/{{snack.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h4>{{ snack.sname }}</h4>
+            <p class="card-text">{{ snack.sdescript }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                
+              </div>
+              <small class="price">Rs. {{ snack.sprice }}</small>
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+  
+</div>
+</div>
+
+
+<hr class="hr">
+  <footer class="foo">
+    <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+    <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+</div>
+</div>
+</div>

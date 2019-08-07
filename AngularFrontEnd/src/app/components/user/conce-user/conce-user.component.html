@@ -1,0 +1,90 @@
+<app-nav-user></app-nav-user>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+  <div class="inventory-body" >
+  <div class="container">
+    <section id="order" >
+      <div class="container">
+           <div class="row">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                   <div class="container1 col-lg-8 col-md-8 col-sm-8 col-xs-8 jumbotron second">
+                      <h1 class="jumbotron-heading">Concessions Services</h1>
+                      
+                      <hr class="hr1">
+                       <form [formGroup]="concessionForm" (ngSubmit)="concessionSubmit()">
+                                                            
+                          <div class="formdetail">   
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   <label for="name" class="lbl">Full Name</label>
+                                   <input type="text" class="form-control" formControlName="name" id="name" name="name" placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                   <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">Full Name is required</div>
+                                    </div>
+                               </div>
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <label for="post" class="lbl">Post</label>
+                                  <input type="text" class="form-control" formControlName="post" id="post" name="post" placeholder="Post" [ngClass]="{ 'is-invalid': submitted && f.post.errors }">
+                                  <div *ngIf="submitted && f.post.errors" class="invalid-feedback">
+                                        <div *ngIf="f.post.errors.required">Post is required</div>
+                                    </div>
+                              </div>
+                              <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <label for="institute" class="lbl">Institute</label>
+                                  <input type="text" class="form-control" formControlName="institute" id="institute" name="institute" placeholder="Institute" [ngClass]="{ 'is-invalid': submitted && f.institute.errors }">
+                                  <div *ngIf="submitted && f.institute.errors" class="invalid-feedback">
+                                        <div *ngIf="f.institute.errors.required">Institude is required</div>
+                                    </div>
+                             </div>
+                              <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <label for="email" class="lbl">Email</label>
+                                  <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Email is required</div>
+                                  </div>
+                             </div>
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   <label for="phone" class="lbl">Phone Number</label>
+                                   <input type="tel" class="form-control" id="phone" placeholder="012 345 6789" formControlName="phone" name="phone" [(ngModel)]="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                                   <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                        <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                                  </div> 
+                            </div>
+                               <!--<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">                                     
+                                   <label for="date" class="lbl">Delivery Date</label>
+                                   <input type="date" name="date" value="" class="form-control">
+                               </div>-->
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   <label for="event" class="lbl">Event Details</label>
+                                   <textarea class="form-control" rows="6" id="event" name="event" placeholder="Event Details" formControlName="event" [ngClass]="{ 'is-invalid': submitted && f.event.errors }"></textarea>
+                                   <div *ngIf="submitted && f.event.errors" class="invalid-feedback">
+                                        <div *ngIf="f.event.errors.required">Event Details are required</div>
+                                   </div> 
+                               </div>
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <label for="detail" class="lbl">Other Details</label>
+                                  <textarea class="form-control" rows="6" id="detail" name="detail" placeholder="Other Details" formControlName="detail" [ngClass]="{ 'is-invalid': submitted && f.detail.errors }"></textarea>
+                                  <div *ngIf="submitted && f.detail.errors" class="invalid-feedback">
+                                        <div *ngIf="f.detail.errors.required">Other Details are required</div>
+                                   </div>
+                              </div>
+                               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   
+                                   <button [disabled]="loading" class="btn btn-default">Submit</button>
+                               </div>
+                           </div>
+                    </form>
+                </div>
+                <div class="col-md-2 col-sm-2"></div>  
+           </div>
+      </div>   
+  </section>
+  <hr class="hr">
+
+      <footer class="foo">
+        <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+        <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+      </footer>
+  </div>
+</div>
+</div>

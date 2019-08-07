@@ -1,0 +1,62 @@
+.jumbotron{
+    opacity: 0.9;
+}
+.jumbotron-heading{
+    text-align: center;
+    color: #2A0A0A;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+.hr1{
+    background-color: #2A0A0A;
+}
+.formdetail{
+    padding-top: 15px;
+}
+.lbl{
+    color: #2A0A0A;
+    font: bolder;
+    font-weight: bold;
+}
+.btn{
+    background-color: #ff4000;
+    color: white;
+}
+.btn:hover{
+    background-color: #2A0A0A;
+    color: white;
+}
+.detail{
+    color: white;
+    text-decoration: none;
+}
+.detail:hover{
+    color: #ff4000;
+}
+.detail1{
+    color: white;
+    padding-left: 10px;
+    text-decoration: none;
+}
+.detail1:hover{
+    color: #ff4000;
+}
+.foot{
+    color: white;
+}
+.hr{
+   background-color: white;
+}
+.foo{
+    padding-bottom: 10px;
+}
+.inventory-body{
+    padding-top: 25px;
+}
+.back{
+    background-image: url('/assets/coffee11.jpg') ;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: -25px;
+}

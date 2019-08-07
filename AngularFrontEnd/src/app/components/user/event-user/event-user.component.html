@@ -1,0 +1,39 @@
+<app-nav-user></app-nav-user>
+<div class="container-fluid back">
+
+<div class="inventory-body">
+<div class="container">
+  <div class="container">
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Upcoming Events</h1>
+        <p class="lead ">Happenings you shouldn't miss in the weeks ahead</p>
+    </div>        
+  </section>         
+  </div>
+
+  <div class="container">
+    <section class="jumbotron jumbo2">
+      <div class="container eve" *ngFor="let event of events">
+        <img src="/assets/event2.png" alt="Avatar" style="width:110px ; height:110px" class="eveimg">
+        <p><span class="evehead">{{ event.name }}</span> </p>
+        
+        <p> <span class="evetext"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{event.date }} {{ event.month }}</span> 
+            <span class="evemid evetext"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ event.place }}</span>
+            <span class="evemid evetext"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ event.time }}</span>
+        </p>
+        
+        <p>{{event.descript }}</p>
+        
+      </div>
+    </section> 
+  </div>
+
+  <hr class="hr">
+  <footer class="foo">
+    <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+    <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+</div>
+</div>
+</div>

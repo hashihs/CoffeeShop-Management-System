@@ -1,0 +1,92 @@
+<app-nav-admin></app-nav-admin>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+      <div class="col-xs-5 col-sm-10 col-md-10 col-lg-10">
+
+        <a class="btn btn-default btn-md" [routerLink]="['/snack_admin']" role="button">Menu-Snacks</a> 
+        
+          <div class="card mb-4 shadow-sm">
+
+              <div class="card-body">
+                <h2>Menu-Coffee</h2>
+                <hr>
+                <form [formGroup]="drinkForm" (ngSubmit)="drinkSubmit()">
+                    <div class="row">
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <label for="dname" class="lbl">Coffee Name</label>
+                        <input type="text" class="form-control" id="dname" placeholder="Event Name" name="dname" formControlName="dname" [ngClass]="{ 'is-invalid': submitted && f.dname.errors }">
+                        <div *ngIf="submitted && f.dname.errors" class="invalid-feedback">
+                            <div *ngIf="f.dname.errors.required">Coffee Name is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <label for="dprice" class="lbl">Price</label>
+                          <input type="text" class="form-control" id="dprice" placeholder="Price" name="dprice" formControlName="dprice" [ngClass]="{ 'is-invalid': submitted && f.dprice.errors }">
+                          <div *ngIf="submitted && f.dprice.errors" class="invalid-feedback">
+                              <div *ngIf="f.dprice.errors.required">Price is required</div>
+                          </div>
+                        </div>
+                  </div>
+                
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="ddescript" class="lbl">Description</label>
+                        <textarea class="form-control" rows="3" id="ddescript" placeholder="Description" name="ddescript" formControlName="ddescript" [ngClass]="{ 'is-invalid': submitted && f.ddescript.errors }"></textarea>
+                        <div *ngIf="submitted && f.ddescript.errors" class="invalid-feedback">
+                            <div *ngIf="f.ddescript.errors.required">Description is required</div>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                          
+                            <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+                            <!-- <button type="button" class="btn btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length" > Upload</button> -->
+                            
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 buttontop">
+                        <button [disabled]="!uploader.getNotUploadedItems().length" class="btn btn-default" (click)="uploader.uploadAll()" >Add Coffee</button>
+                    </div>
+                </form>
+                <hr>
+                
+              </div>
+            </div>
+
+            <!--upload an image-->
+            
+
+             <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>  
+                        <th >Action</th>
+                        
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr *ngFor="let drink of drinks">
+                        <td>{{ drink.image }}</td>
+                        <td>{{ drink.dname }}</td>
+                        <td>{{ drink.dprice }}</td>
+                        <td>{{ drink.ddescript }}</td>
+                        
+                        <td class="social-icon">
+                           
+                            <!-- <li><a href="#" class="fa fa-pencil" attr="facebook icon"></a></li> -->
+                            <li><a (click)="deleteDrink(drink._id)" class="fa fa-trash-o"></a></li>                                
+                        </td>                     
+                      </tr>
+                           
+                    </tbody>
+            </table>
+      </div>
+
+    </div>
+</div>

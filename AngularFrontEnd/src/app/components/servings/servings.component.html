@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+<div class="inventory-body" >
+
+<div class="container">
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Our Services</h1>
+      <br><br>
+      <div class="row">
+          <div class="col-md-4 ">
+            <a class="cardText" (click)="flash()">
+              <div class="card1 mb-4 shadow-sm box1">
+                  <div class="card-body">
+                    <img class="card-img-top" src="/assets/cup.png" alt="Card image cap">
+                    <br><br>
+                    <h5>Make Your Order</h5>
+                    <p class="card-text">This is the best place for you to get varities of flavorful coffee drinks from global elite brands and tasty coffee snacks.</p>
+                   
+                  </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 ">
+            <a class="cardText" (click)="flash()">
+              <div class="card2 mb-4 shadow-sm box2">
+                  <div class="card-body">
+                      <img class="card-img-top" src="/assets/table.png" alt="Card image cap">
+                      <br><br>
+                      <h5>Reserve Your Table</h5>
+                    <p class="card-text">Reserve a table at our shop to try delicious coffee snacks and drinks of the highest quality and arouse sweet memories.</p>
+                   
+                  </div>
+                </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a  class="cardText" (click)="flash()">
+              <div class="card3 mb-4 shadow-sm box2">
+                  <div class="card-body">
+                      <img class="card-img" src="/assets/seeds2.png" alt="Card image cap">
+                      <br><br>
+                      <h5>Buy Coffee Beans</h5>
+                    <p class="card-text">Join with us to enjoy the aroma of flavorful coffee beans from exceptional coffee brands available at our coffee shop.</p>  
+                  </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="cardText" [routerLink]="['/event']">
+              <div class="card4 mb-4 shadow-sm box2">
+                  <div class="card-body">
+                      <img class="card-img-top" src="/assets/event.png" alt="Card image cap">
+                      <br><br>
+                      <h5>Events</h5>
+                    <p class="card-text">Have a quick glance at the upcomming events and please do not miss the unique opportunities to aline with us.</p>
+                   
+                  </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="cardText" (click)="flash()">
+              <div class="card5 mb-4 shadow-sm box1">
+                  <div class="card-body">
+                      <img class="card-imgg" src="/assets/catering.png" alt="Card image cap">
+                      <br><br>
+                      <h5>Concession Services</h5>
+                    <p class="card-text">If you can think of anything connected with coffee, then we try our best to offer it as in the way you need it.</p>
+                    
+                  </div>
+              </div>
+           </a>
+          </div>
+      </div>
+    </div>
+</section>
+
+<hr class="hr">
+<footer class="foo">
+    <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+    <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+</div>
+</div>
+</div>

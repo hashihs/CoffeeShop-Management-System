@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md  mb-4 ">
+  <a class="navbar-brand mr-auto mr-lg-0" href="#">   Coffee Shop</a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class=" navbar-collapse offcanvas-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item active" [routerLinkActive]="[Active]" [routerLinkActiveOptions]="{Exact:true}">
+        <a class="nav-link" [routerLink]="['/user']" >Home</a>
+      </li>
+      <li class="nav-item " [routerLinkActive]="[Active]" [routerLinkActiveOptions]="{Exact:true}">
+        <a class="nav-link" [routerLink]="['/menu_user']" >Menu</a>
+      </li>
+      <li class="nav-item " [routerLinkActive]="[Active]" [routerLinkActiveOptions]="{Exact:true}">
+        <a class="nav-link" [routerLink]="['/servings_user']" >Services</a>
+      </li>
+      <!-- <li class="nav-item " [routerLinkActive]="[Active]" [routerLinkActiveOptions]="{Exact:true}">
+        <a class="nav-link" [routerLink]="['/cart_user']" >My Cart</a>
+      </li> -->
+      <li class="nav-item " [routerLinkActive]="[Active]" [routerLinkActiveOptions]="{Exact:true}">
+        <a class="nav-link" [routerLink]="['/contact_user']" >Contact</a>
+      </li>
+    </ul>
+  <!--- <form class="form-inline mt-2 mt-md-0">
+      <button class="btn my-2 my-sm-0 " (click)="onLogoutClick()" type="submit">Sign Out</button>
+      
+    </form>-->
+
+    <div class="form-inline mt-2 mt-md-0">
+      <a class="btn my-2 my-sm-0 " (click)="onLogoutClick()" href="#" style="color:white">Sign Out</a>
+      
+    </div>
+
+  </div>
+</nav>

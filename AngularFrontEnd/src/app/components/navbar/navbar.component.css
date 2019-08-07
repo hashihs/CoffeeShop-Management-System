@@ -1,0 +1,30 @@
+.btn{
+    background-color: #2A0A0A;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+.btn:hover{
+    background-color: #ff4000;
+}
+.btn:focus, .btn:active{
+    background-color: #ff4000;
+}
+.navbar-brand{
+    font-size: 28px;
+    color: white;
+    font: bold;
+}
+.navbar{
+    background-color: #2A0A0A;
+}
+.nav-link{
+    color: white;
+    font-size: 18px;
+}
+.nav-link:hover{
+    background-color: #ff4000;
+}
+.nav-item{
+    margin-left: 10px;
+}

@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+  
+<div class="container ">
+  <div class="inventory-body" >
+  <div class="jumbotron ">
+    <div class="container">
+    <h1 class="dis">Welcome to Your Coffee Shop...!</h1>
+    <h1 class="dis1">About Us</h1><br>
+
+    <p class="para">Coffee Shop is the place where you can get Flavourful coffee strains from global elite and roasters at very affordable price.
+      Most popular modern coffee drinks and tasty coffee snacks are available here.This is more than a coffee shop since we provide valuble services.Discover the world of coffee with us!!!</p>
+    <br>
+    <figure class="profile">
+        
+        <figcaption>
+             <h3>Hashini Senevirathna</h3>
+             <p>Owner-manager</p>
+        </figcaption>
+   </figure>
+   <br>
+    <p class="para1">
+      <a class="btn btn-default btn-lg" [routerLink]="['/signup']" role="button">Sign Up</a>
+      
+    </p>
+  </div>
+  </div>
+
+
+  <div class="jumbotron second">
+  <div class="row">
+   
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="/assets/drik.png" alt="Generic placeholder image" width="200" height="200"><br>
+      <h4 class="head4">Elite Coffee Brands</h4>
+      <p>Take a sip of elite coffee, and revel in the different tastes.</p>
+      <p><a class="btn btn-default" href="#" [routerLink]="['/menu']" role="button">Coffee Brands &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="/assets/cake.png" alt="Generic placeholder image" width="200" height="200"><br>
+      <h4 class="head4">Flavourful Coffee Snacks</h4>
+      <p>At coffee shop you can find lots of tasty coffee flavors.</p>
+      <p><a class="btn btn-default" href="#" [routerLink]="['/menu']" role="button">Coffee Snacks &raquo;</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="/assets/seeds.png" alt="Generic placeholder image" width="200" height="200"><br>
+      <h4 class="head4">Coffee Beans </h4>
+      <p>Enjoy the aroma of selected coffee beans available at our shop. </p>
+      <p><a class="btn btn-default" (click)="flash()" role="button" style="color:white">Coffee Beans &raquo;</a></p>
+    </div>
+  </div>
+  </div>
+
+  <hr class="hr">
+  <footer class="foo">
+    <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+    <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+  </div>
+</div>
+</div>

@@ -1,0 +1,47 @@
+.jumbotron{
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.title{
+    font-size: 2.5em;
+    text-align: center;
+    color: #2A0A0A;
+}
+.lc{
+    color: #2A0A0A;
+    font: bolder;
+}
+.btn{
+    background-color: #2A0A0A;
+    color: white;
+}
+.btn:hover{
+    background-color: #ff4000;
+}
+.line{
+    background: #2A0A0A;
+    margin-top: 30px;
+} 
+.para1{
+    color: #2A0A0A;
+    text-align: right;
+}
+.sign{
+    color: red;
+    text-decoration: none;
+}
+.sign:hover{
+    color: #ff4000;
+}
+.row{
+    padding-bottom: 30px;
+}
+.back{
+    background-image: url('/assets/coffeeback.jpg') ;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: -25px;
+    margin-bottom: -20px;
+    padding-bottom: 60px;
+}

@@ -1,0 +1,123 @@
+<app-nav-user></app-nav-user>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+<div class="container">
+  <section id="reserve">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                      <div class="container1 col-lg-10 col-md-10 col-sm-10 col-xs-10 jumbotron">  
+                              <h1 class="jumbotron-heading">Reserve Your Table Now</h1>
+                              <hr class="hr1">
+                              
+                          <form [formGroup]="reserveForm" (ngSubmit)="onReserveSubmit()">
+                              <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                      <div class="form-group ">
+                                          <label for="date" class="lbl">Reserved Date</label>
+                                          <input type="date" name="date" value="" class="form-control" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors }"> 
+                                          <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                                                <div *ngIf="f.date.errors.required">Date is required</div>
+                                          </div>
+
+                                      </div>
+                                      <div class="form-group">
+                                              <label for="tbl" class="lbl">Table No</label>
+                                              <select class="form-control" id="tbl" formControlName="tableNo" name="tableNo" [ngClass]="{ 'is-invalid': submitted && f.tableNo.errors }">
+                                                  <option>1</option>
+                                                  <option>2</option>
+                                                  <option>3</option>
+                                                  <option>4</option>
+                                                  <option>5</option>
+                                                  <option>6</option>
+                                                  <option>7</option>
+                                                  <option>8</option>
+                                                  <option>9</option>
+                                                  <option>10</option>
+                                              </select>
+                                              <div *ngIf="submitted && f.tableNo.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.tableNo.errors.required">Table No is required</div>
+                                              </div>
+                                      </div>
+                                      <div class="form-group">
+                                              <label for="name" class="lbl"> Full Name</label>
+                                              <input type="text" class="form-control" formControlName="name" id="name" name="name" placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.name.errors.required">Full Name is required</div>
+                                                </div>
+                                      </div>
+                                      <div class="form-group">
+                                            <label for="tp" class="lbl">Phone Number</label>
+                                              <input type="text" class="form-control" id="tp" placeholder="012 3456789" formControlName="phone" name="phone" [(ngModel)]="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                                              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                                              </div>     
+                                      </div>
+                                      <div class="form-group ">
+                                              <!--<button type="submit" class="btn btn-default ">Reserve</button>-->
+                                              <button [disabled]="loading" class="btn btn-default">Reserve</button>
+                                      </div>  
+                                  </div>
+  
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                      <div class="form-group">
+                                          <label for="hour" class="lbl">Hour</label>
+                                          <select class="form-control" id="hour" formControlName="hour" name="hour" [ngClass]="{ 'is-invalid': submitted && f.hour.errors }">
+                                              <option>8:00-9:00 AM</option>
+                                              <option>9:00-10:00 AM</option>
+                                              <option>10:00-11:00 AM</option>
+                                              <option>11:00-12:00 AM</option>
+                                              <option>12:00-1:00 PM</option>
+                                              <option>1:00-2:00 PM</option>
+                                              <option>2:00-3:00 PM</option>
+                                              <option>3:00-4:00 PM</option>
+                                              <option>4:00-5:00 PM</option>
+                                              <option>5:00-6:00 PM</option>
+                                              <option>6:00-7:00 PM</option>
+                                              <option>7:00-8:00 PM</option>
+                                              <option>8:00-9:00 PM</option>
+                                              <option>9:00-10:00 PM</option>
+                                          </select>
+                                          <div *ngIf="submitted && f.hour.errors" class="invalid-feedback">
+                                                <div *ngIf="f.hour.errors.required">Hour is required</div>
+                                          </div>
+                                      </div> 
+                                      <div class="form-group">
+                                              <label for="people" class="lbl">Persons</label>
+                                              <select class="form-control" id="people" formControlName="persons" name="persons" [ngClass]="{ 'is-invalid': submitted && f.persons.errors }">
+                                                      <option>1 person</option>
+                                                      <option>2 persons</option>
+                                                      <option>3 persons</option>
+                                                      <option>4 persons</option>
+                                                      <option>5 persons</option>
+                                                      <option>6 persons</option>
+                                                      <option>7 persons</option>
+                                                      <option>8 persons</option>
+                                              </select>
+                                              <div *ngIf="submitted && f.persons.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.persons.errors.required">Persons is required</div>
+                                              </div>
+                                      </div> 
+                                      <div class="form-group">
+                                              <label for="email" class="lbl">Email</label>
+                                              <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                              </div>
+                                      </div>         
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+              </div>  
+          </div>
+  </section>
+  <hr class="hr">
+  <footer class="foo">
+      <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+      <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+</div>
+</div>

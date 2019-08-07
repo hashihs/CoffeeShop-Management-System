@@ -1,0 +1,40 @@
+<app-nav-admin></app-nav-admin>
+<app-alert></app-alert>
+<div class="table-responsive container">
+    <table class="table table-striped table-hover table-bordered ">
+        <thead class="thead-dark">
+          <tr>
+            <th>Date</th>
+            <th>Hour</th>
+            <th>Table No</th>  
+            <th>Persons</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let table of tables">
+            <td>{{ table.date }}</td>
+            <td>{{ table.hour }}</td>
+            <td>{{ table.tableNo }}</td>
+            <td>{{ table.persons }}</td>
+            <td>{{ table.name }}</td>
+            <td>{{ table.email }}</td>
+            <td>{{ table.phone }}</td>
+            
+            <td class="social-icon">
+               
+                <!-- <li><a href="#" class="fa fa-pencil" attr="facebook icon"></a></li> -->
+                <li><a (click)="deleteTable(table._id)" class="fa fa-trash-o"></a></li>
+                      
+          </td>
+          
+        </tr>
+               
+        </tbody>
+      </table>
+</div>

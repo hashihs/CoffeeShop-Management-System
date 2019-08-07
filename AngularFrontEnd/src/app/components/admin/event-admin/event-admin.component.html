@@ -1,0 +1,102 @@
+<app-nav-admin></app-nav-admin>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+      <div class="col-xs-5 col-sm-10 col-md-10 col-lg-10">
+          <div class="card mb-4 shadow-sm">
+              
+              <div class="card-body">
+                <h2>Events</h2>
+                <hr>
+                <form [formGroup]="eventForm" (ngSubmit)="eventSubmit()">
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="name" class="lbl">Event Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Event Name" name="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Event Name is required</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <label for="date" class="lbl">Date</label>
+                        <input type="text" class="form-control" id="date" placeholder="Date" name="date" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+                        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                            <div *ngIf="f.date.errors.required">Date is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <label for="month" class="lbl">Month</label>
+                        <select class="form-control" id="month" name="month" formControlName="month" [ngClass]="{ 'is-invalid': submitted && f.month.errors }">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
+                            <div *ngIf="f.month.errors.required">Month is required</div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <label for="time" class="lbl">Time</label>
+                          <input type="text" class="form-control" id="time" placeholder="Time" name="time" formControlName="time" [ngClass]="{ 'is-invalid': submitted && f.time.errors }">
+                          <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+                              <div *ngIf="f.time.errors.required">Time is required</div>
+                          </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label for="place" class="lbl">Location</label>
+                            <input type="text" class="form-control" id="place" placeholder="Location" name="place" formControlName="place" [ngClass]="{ 'is-invalid': submitted && f.place.errors }">
+                            <div *ngIf="submitted && f.place.errors" class="invalid-feedback">
+                                <div *ngIf="f.place.errors.required">Location is required</div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="descript" class="lbl">Description</label>
+                        <textarea class="form-control" rows="3" id="descript" placeholder="Description" name="descript" formControlName="descript" [ngClass]="{ 'is-invalid': submitted && f.descript.errors }"></textarea>
+                        <div *ngIf="submitted && f.descript.errors" class="invalid-feedback">
+                            <div *ngIf="f.descript.errors.required">Description is required</div>
+                        </div>
+                    </div><br>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button [disabled]="loading" class="btn btn-default">Add Event</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm" *ngFor="let event of events">
+        
+                    <div class="card-body">
+                      <h4>Event</h4>
+                      <hr>
+                      <p><b>Name : </b>{{ event.name }}</p>
+                      <p><b>Date : </b>{{event.date }} {{ event.month }}</p>
+                      <p><b>Location : </b>{{ event.place }}</p>
+                      <p><b>Time : </b>{{ event.time }}</p>
+                      <p><b>Description : </b>{{event.descript }}</p>
+                      
+                      <!--<div class="d-flex justify-content-between align-items-center">-->
+                          <div class="social-icon">         
+                              <!-- <li><a href="#" class="fa fa-pencil" attr="facebook icon"></a></li> -->
+                              <li><a (click)="deleteEvent(event._id)" class="fa fa-trash-o"></a></li>            
+                          </div>
+                     <!-- </div>-->
+                    </div>
+                  </div>
+      </div>
+
+    </div>
+</div>

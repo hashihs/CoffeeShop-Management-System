@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<app-alert></app-alert>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="jumbotron">
+    <div class="container">
+      <h2 class="title"><i class="fa fa-lock" style="color:#2A0A0A"></i> Login</h2>
+      <br>
+    <!--  <form (submit)="onLoginSubmit()">
+          <div class="form-group">
+            <label class="lc">Username</label>
+            <input type="text" [(ngModel)]="username" name="username" class="form-control"  placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label class="lc">Password</label>
+            <input type="password" [(ngModel)]="password" name="password" class="form-control"  placeholder="Password">
+          </div>
+          
+          <input type="submit" class="btn btn-default" value="Login">
+        </form>-->
+
+        <form [formGroup]="loginForm" (submit)="onSubmit()" method="POST">
+          <div class="form-group">
+              <label for="username" class="lc"><i class="fa fa-user-o" style="color:#2A0A0A"></i> Username</label>
+              <input type="text" formControlName="username" class="form-control" name="username" [(ngModel)]="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+      
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">Username is required</div>
+              </div>
+          </div>
+      
+          <div class="form-group">
+              <label for="password" class="lc"><i class="fa fa-eye-slash" style="color:#2A0A0A"></i> Password</label>
+              <input type="password" formControlName="password" class="form-control" name="password" [(ngModel)]="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+      
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="lc"><input type="checkbox" checked="checked" value="val">Remenber Me</label> 
+       
+          </div>
+      
+          <div class="form-group">
+              <button type="submit" [disabled]="loading" class="btn btn-primary">Login</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              
+          </div>
+      </form>
+      
+      <hr class="line">
+      <div class="func">
+        <p class="para1">Not a member?  <a class="sign" [routerLink]="['/signup']">Sign Up</a></p>
+        <!-- <p class="para1">Forgot  <a class="sign" href="#">Password?</a></p> -->
+      </div>
+
+    </div>
+    </div> 
+  </div>   
+  <div class="col-md-3"></div>
+</div>
+</div>
+
+
+

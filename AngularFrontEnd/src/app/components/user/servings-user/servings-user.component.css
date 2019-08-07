@@ -1,0 +1,108 @@
+.jumbotron-heading{
+    color: #2A0A0A;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+}
+.jumbotron{
+    opacity: 1;
+    background-color: whitesmoke;
+}
+.card-img-top{
+    width:50px;
+    height:50px;
+}
+.card-img{
+    width:70px;
+    height:50px;
+}
+.card-imgg{
+    width:40px;
+    height:50px;
+}
+.card1{
+    background-color: #4D0101;
+    color: white;
+    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.card2{
+    background-color: #FDED8F;
+    color: #2A0A0A;
+    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.card3{
+    background-color: #FDED8F;
+    color: #2A0A0A;
+    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.card4{
+    background-color: #FDED8F;
+    color: #2A0A0A;
+    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.card5{
+    background-color: #4D0101;
+    color: white;
+    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.card-text{
+   margin-top: 15px;
+}
+.cardText{
+    text-decoration: none;
+    
+}
+.box1:hover{
+    border: 2px solid rgba(247, 172, 10, 0.973);
+}
+.box2:hover{
+    border: 2px solid #4D0101;
+}
+.detail{
+    color: white;
+    text-decoration: none;
+}
+.detail:hover{
+    color: #ff4000;
+}
+.detail1{
+    color: white;
+    padding-left: 10px;
+    text-decoration: none;
+}
+.detail1:hover{
+    color: #ff4000;
+}
+.foot{
+    color: white;
+}
+.hr{
+   background-color: white;
+}
+.foo{
+    padding-bottom: 10px;
+}
+.inventory-body{
+    padding-top: 25px;
+}
+.back{
+    background-image: url('/assets/cof24.jpg') ;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: -25px;
+}
+   

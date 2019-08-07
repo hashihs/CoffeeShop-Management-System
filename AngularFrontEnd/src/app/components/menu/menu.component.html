@@ -1,0 +1,255 @@
+<app-navbar></app-navbar>
+<div class="container-fluid back">
+<div class="inventory-body" >
+<div class="container">
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Coffee Menu</h1>
+          <p class="lead">We have the best selection of lattes, flat whites and filter blends of global elite brands for you to try.Join with us to discover your rich, bold flavors.</p>
+        </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+          <div class="col-md-3" *ngFor="let drink of drinks">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="http://localhost:8000/{{drink.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h4>{{ drink.dname }}</h4>
+                  <p class="card-text">{{ drink.ddescript }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                      
+                    </div>
+                    <small class="price">Rs. {{ drink.dprice }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!--  <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/black-americano.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Americano</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="/assets/expresso.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4>Expresso</h4>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/mocha.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Mocha</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/icedcoffee.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Ice-coffee</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/cafe-au-laitt.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Cafe-au-lait</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/caffeine.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Caffeine</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/cafe-noisette.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Cafe-noisette</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/caramalMacchiato.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Caramal-macchiato</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/latte-macchiato-starbucks.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4>Latte-macchiato</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/latte-cappucinoflatwhite.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>latte-cappucino flat-white</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="/assets/matcha-powder-latte.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Matcha-powder-latte</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+            </div>-->
+      </div>
+      
+    </div>
+</div>
+<br>
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Food Menu</h1>
+      <p class="lead text-muted">We have the best selection of baked goods and tasty coffee snacks on display for you to choose from.Join with us to discover the world of coffee and arouse your sweet memories.</p>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-4" *ngFor="let snack of snacks">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="http://localhost:8000/{{snack.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h4>{{ snack.sname }}</h4>
+            <p class="card-text">{{ snack.sdescript }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                
+              </div>
+              <small class="price">Rs. {{ snack.sprice }}</small>
+              
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+  
+</div>
+</div>
+
+
+<hr class="hr">
+  <footer class="foo">
+    <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+    <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+  </footer>
+</div>
+</div>
+</div>

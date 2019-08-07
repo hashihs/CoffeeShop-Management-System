@@ -1,0 +1,52 @@
+.jumbotron-heading{
+    color: #2A0A0A;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+}
+.jumbotron{
+    opacity: 0.8;
+}
+.lead {
+    color: black;
+    font: bolder;
+}
+.detail{
+    color: white;
+    text-decoration: none;
+}
+.detail:hover{
+    color: #ff4000;
+}
+.detail1{
+    color: white;
+    padding-left: 10px;
+    text-decoration: none;
+}
+.detail1:hover{
+    color: #ff4000;
+}
+.foot{
+    color: white;
+}
+.hr{
+   background-color: white;
+}
+.foo{
+    padding-bottom: 10px;
+}
+.inventory-body{
+    padding-top: 25px;
+}
+.back{
+    background-image: url('/assets/cof24.jpg') ;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: -25px;
+}
+.price{
+    font-weight: bold;
+    color: #2A0A0A;
+}
+h4{
+    color: #2A0A0A;
+}

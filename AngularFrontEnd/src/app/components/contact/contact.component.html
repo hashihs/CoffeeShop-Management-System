@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+<flash-messages></flash-messages>
+<div class="container-fluid back">
+
+<div class="inventory-body">
+<section class="contact" >
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-4 col-sm-4"></div>
+              <div class="col-md-8 col-sm-8 jumbotron jumbot">
+                   <!-- CONTACT FORM HERE -->
+                   <form (submit)="onMsgSubmit()">
+
+                        <!-- SECTION TITLE -->
+                        <div class="section-title">
+                             <h1 class="head1">Leave us a Message</h1>
+                             <h4 class="head4">We love hearing from you, let us know what's on your mind</h4>
+                        </div>
+                        <br><br>
+                        <div class="sec" >
+                             <div class="form-group col-md-12 col-sm-12">
+                                  <label for="name" class="lbl">Name</label>
+                                  <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Full Name">
+                             </div>
+
+                             <div class="form-group col-md-12 col-sm-12">
+                                  <label for="email" class="lbl">Email</label>
+                                  <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Your Email">
+                             </div>
+                             <div class="form-group col-md-12 col-sm-12">
+                                  <label for="Message" class="lbl">Message</label>
+                                  <textarea class="form-control" rows="5" id="messages"[(ngModel)]="messages" name="messages" placeholder="Message"></textarea>
+                                  <br>
+                                  <button type="submit" class="form-control btn" id="cf-submit" name="submit" >Submit</button>
+                             </div>
+                        </div>
+                  </form>
+              </div>
+         </div>
+    </div>
+</section>
+<br><br>
+<div class="container">
+        <footer class="foo">
+                <div class="jumbotron jumbo">
+                     <div class="row">
+                          <div class="col-md-4 col-sm-4 block">
+                               <div class="footer-thumb"> 
+                                    <h5 class="head5">Address</h5>
+                                    <p class="para">The Coffee Shop</p>
+                                    <p class="para">233 10th Ave</p>
+                                    <p class="para">Kandy</p><br>
+                                   
+                               </div>
+                          </div>
+            
+                          <div class="col-md-4 col-sm-4 block"> 
+                                <div class="footer-thumb">
+                                     <div class="opening-hours">
+                                          <h5 class="head5" >Opening Hours</h5>
+                                          <p class="para">Monday - Friday : <span>08:00 AM - 10:00 PM</span></p>
+                                          <p class="para">Saturday : <span>09:00 AM - 06:00 PM</span></p>
+                                          <p class="para">Sunday : <span>Closed</span></p><br>
+                                     </div> 
+             
+                                    
+                                </div>
+                           </div>
+            
+                          <div class="col-md-4 col-sm-4 block"> 
+                               <div class="footer-thumb"> 
+                                    <h5 class="head5">Contact </h5>
+                                   
+                                      <div class="contact-info">
+                                          <p class="para"><i class="fa fa-phone"></i> 081-060-0160</p>
+                                          <p class="para"><i class="fa fa-phone"></i> 071-552-5520</p>
+                                          <p class="para"><i class="fa fa-envelope-o"></i> <a href="#" class="email"> coffee@company.com</a></p>
+                                      </div>
+                                      <ul class="social-icon">
+                                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-instagram"></a></li>
+                                   </ul>
+                               </div>
+                          </div>
+                     </div>
+                </div>
+                <hr class="hr">
+                <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+                <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+            </footer>
+</div>
+
+</div>
+
+</div>

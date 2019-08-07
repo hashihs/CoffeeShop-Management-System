@@ -1,0 +1,175 @@
+
+<app-nav-user></app-nav-user>
+<flash-messages></flash-messages>
+
+
+
+
+<div class="container-fluid back">
+    <div class="inventory-body" >
+    <div class="container">
+    <section id="order" >
+        <div class="container">
+             <div class="row">
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                     <div class="container1 col-lg-8 col-md-8 col-sm-8 col-xs-8 jumbotron">
+                        <h1 class="jumbotron-heading">Place Your Order Now</h1>
+                        <hr class="hr1">
+    
+                         <form [formGroup]="orderForm" (ngSubmit)="submit()"> 
+                        
+                            <div class="formdetail">
+                            
+                          
+                            <div class="row rowalign">
+                                <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                                    <label for="coffee" class="lbl">Coffee Type</label>
+                                   
+                                </div>
+                                <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                    <label for="quantity" class="lbl"> Quantity</label>
+                                    
+                                </div>
+                                <!-- <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                    <label for="size" class="lbl"> Size</label>
+                                    
+                                </div> -->
+                            </div>
+                            
+                             
+                             <div formArrayName="coffeeDrinks">
+                                <div *ngFor="let drinkItem of drinkForms.controls; let i=index" >
+                                    <div [formGroupName]="i"class="row rowalign">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <select class="form-control"  id="coffee" formControlName="coffee" name="coffee" >
+                                                <option *ngFor="let drink of drinks" [ngValue]="drink">{{ drink }}</option>   
+                                            </select>
+                                            <span class="text-danger" *ngIf="getdrinkForms(i).controls['coffee'].touched && getdrinkForms(i).controls['coffee'].hasError('required') && submitted">
+                                                Coffee type is required! </span>                           
+                                        </div>
+                            
+                                        <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                            <input type="text" class="form-control" id="cquantity" placeholder="Quantity" formControlName="cquantity" name="cquantity" >
+                                            <span class="text-danger" *ngIf="getdrinkForms(i).controls['cquantity'].touched && getdrinkForms(i).controls['cquantity'].hasError('required')  && submitted">
+                                                Quantity is required! </span> 
+                                        </div>
+                                        <!-- <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <select class="form-control"  id="coffee" formControlName="coffee" name="coffee" >
+                                              
+                                                <option>Small</option>
+                                                <option>Medium</option>
+                                                <option>Large</option>
+                                            </select>
+                                            
+                                        </div>  -->
+    
+                                        <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                            <button type="button" (click)="deleteCof(i)" class="btn btn-default ">Delete </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+    
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" (click)="addCof()" class="btn btn-default "> Select More Coffee</button>
+                                </div> 
+    
+                                
+                                <br>
+                                <!-- <hr style="color:#2A0A0A;border-top:1px solid;width:100%"><br>
+
+    
+                             <div class="row rowalign">
+                                <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                                    <label for="food" class="lbl">Food Type</label>
+                                    
+                                </div>
+                                <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                    <label for="quan" class="lbl"> Quantity</label>
+                                </div>
+                            </div>
+    
+                            <div formArrayName="foodsnacks">
+                                <div *ngFor="let foodItem of foodForms.controls; i=index" >
+                                    <div [formGroupName]="i" class="row rowalign"> 
+                                        <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-5">
+                                            <select class="form-control" id="food" formControlName="food" name="food">
+                                                <option *ngFor="let snack of snacks" [ngValue]="snack" >{{ snack }}</option>                            
+                                            </select>
+                                            <span class="text-danger" *ngIf="getfoodForms(i).controls['food'].touched && getfoodForms(i).controls['food'].hasError('required') && submitted">
+                                                Label is required! </span> 
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                            <input type="text" class="form-control" id="fquantity" placeholder="Quantity" formControlName="fquantity" name="fquantity">
+                                            <span class="text-danger" *ngIf="getfoodForms(i).controls['fquantity'].touched && getfoodForms(i).controls['fquantity'].hasError('required') && submitted">
+                                                Label is required! </span> 
+                                        </div>
+                                 
+                                        <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                            <button type="button" (click)="deletefood(i)" class="btn btn-default "> Delete </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" (click)="addfoo()" class="btn btn-default "> Select More Food</button>
+                            </div>  -->
+     
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12"><br>
+                                     <hr style="color:#2A0A0A;border-top:1px solid;width:100%"><br>
+                                 </div>
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <label for="name" class="lbl"> Name</label>
+                                     <input type="text" class="form-control" id="name"  formControlName="name"  name="name" placeholder="Full Name" [(ngModel)]="name">
+                                     <span class="text-danger" *ngIf="orderForm.controls['name'].touched && orderForm.controls['name'].hasError('required')  && submitted">
+                                        Name is required! </span>
+                                 </div>
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <label for="email" class="lbl">Email</label>
+                                     <input type="email" class="form-control" id="email" formControlName="email" name="email" placeholder="Email" [(ngModel)]="email">
+                                     <span class="text-danger" *ngIf="orderForm.controls['email'].touched && orderForm.controls['email'].hasError('required')  && submitted">
+                                        Email is required! </span>
+                                </div>
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <label for="tp" class="lbl">Phone Number</label>
+                                     <input type="tel" class="form-control" id="tp" formControlName="phone" name="phone" placeholder="012 3456789" [(ngModel)]="phone">
+                                     <span class="text-danger" *ngIf="orderForm.controls['phone'].touched && orderForm.controls['phone'].hasError('required')  && submitted">
+                                        phone is required! </span>
+                                 </div>
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <label for="date" class="lbl">Delivery Date</label>
+                                     <input type="date" name="date" value="" class="form-control" formControlName="date" [(ngModel)]="date">
+                                     <span class="text-danger" *ngIf="orderForm.controls['date'].touched && orderForm.controls['date'].hasError('required')  && submitted">
+                                        date is required! </span>
+                                 </div>
+    
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <label for="address" class="lbl">Delivery Address</label>
+                                     <textarea class="form-control" rows="6" id="address" formControlName="address" name="address" placeholder="Address" [(ngModel)]="address"></textarea>
+                                     <span class="text-danger" *ngIf="orderForm.controls['address'].touched && orderForm.controls['address'].hasError('required')  && submitted">
+                                        address is required! </span>
+                                 </div>
+                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     <button type="submit" [disabled]="!orderForm.valid && loading" class="form-control btn btn-default " id="order-submit" name="submit"> Order</button>
+                                 </div>
+                             </div>
+                      </form>
+                  </div>
+                  <div class="col-md-2 col-sm-2"></div>  
+             </div>
+        </div>   
+    </section>
+    <hr class="hr">
+    <footer class="foo">
+        <p class="pull-right"><a href="#" class="detail">Back to top</a></p>
+        <p class="foot">&copy; The Coffee Shop  <a href="#" class="detail1">Privacy</a> &middot; <a href="#" class="detail1">Terms</a></p>
+    </footer>
+    </div>
+    </div>
+    </div>
